@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>مختبر عماد الافتراضي — تجارب الأحياء التفاعلية</title>
+<meta name="description" content="محاكاة واقعية ثلاثية الأبعاد لتجارب مختبر الأحياء، يجرّبها الطالب والباحث قبل دخول المختبر الحقيقي.">
+<meta name="theme-color" content="#0b1620">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="home">
+<section class="hero">
+  <div>
+    <div class="brand">
+      <img src="assets/logo.svg" alt="" width="44" height="44">
+      <div>مختبر عماد الافتراضي <span class="en">ImadLab</span></div>
+    </div>
+    <h1>جرّب التجربة <span>قبل أن تدخل المختبر</span></h1>
+    <p>محاكاة ثلاثية الأبعاد لتجارب مختبر الأحياء: تحضّر الشريحة بيدك، وتضبط المجهر، وتخطئ وتتعلّم من خطئك، وترافقك المساعدة «نور» خطوة بخطوة، وتخرج بتقرير مختبري كامل.</p>
+    <span class="credit">إعداد البروفيسور عماد محمد فرحان</span>
+    <div class="stats" id="stats"></div>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+    <svg viewBox="0 0 400 300">
+      <defs>
+        <radialGradient id="lf" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff7d6"/><stop offset=".8" stop-color="#f3dfa3"/><stop offset="1" stop-color="#8a6a2a"/></radialGradient>
+        <clipPath id="cc"><circle cx="270" cy="140" r="105"/></clipPath>
+      </defs>
+      <circle cx="270" cy="140" r="112" fill="#0a0a0a"/>
+      <circle cx="270" cy="140" r="105" fill="url(#lf)"/>
+      <g clip-path="url(#cc)" stroke="#9a5b1c" stroke-width="3" fill="#e8c36a33">
+        <path d="M150 60h70l12 22h80l14-22h70M150 104h40l14 22h96l12-22h90M150 148h76l12 22h70l14-22h80M150 192h44l12 22h104l12-22h80M150 236h70l12 22h80l14-22h70"/>
+        <path d="M220 60l12 22-12 22M312 82l14-22M326 82l-14 22M190 104l14 22-14 22M300 126l12-22M312 104l-12 22-14 22M226 148l12 22-12 22M308 170l14-22M322 148l-14 22-12 22M194 192l12 22-12 22M310 214l12-22M322 192l-12 22-14 22"/>
+      </g>
+      <g clip-path="url(#cc)" fill="#8a4a12"><ellipse cx="200" cy="72" rx="9" ry="7"/><ellipse cx="290" cy="116" rx="9" ry="7"/><ellipse cx="250" cy="160" rx="9" ry="7"/><ellipse cx="350" cy="204" rx="9" ry="7"/><ellipse cx="215" cy="248" rx="9" ry="7"/><ellipse cx="360" cy="74" rx="9" ry="7"/></g>
+      <g transform="translate(30 40)">
+        <rect x="10" y="215" width="120" height="16" rx="6" fill="#e7ebe8"/>
+        <rect x="70" y="40" width="22" height="180" rx="9" fill="#dfe4e1"/>
+        <rect x="18" y="140" width="80" height="8" rx="3" fill="#1d252b"/>
+        <rect x="20" y="30" width="72" height="26" rx="10" fill="#dfe4e1"/>
+        <rect x="32" y="-4" width="16" height="44" rx="5" fill="#2b3136" transform="rotate(-25 40 18)"/>
+        <rect x="34" y="56" width="10" height="34" rx="3" fill="#c7ccd0"/><rect x="34" y="82" width="10" height="4" fill="#38bdf8"/>
+        <circle cx="96" cy="160" r="13" fill="#3a4247"/><circle cx="104" cy="160" r="7" fill="#596168"/>
+        <circle cx="40" cy="222" r="5" fill="#fde68a"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<main class="container">
+  <div class="toolbar">
+    <button class="chip on" data-lvl="all">الكل</button>
+    <button class="chip" data-lvl="school">الإعدادية</button>
+    <button class="chip" data-lvl="uni">الجامعة</button>
+    <button class="chip" data-lvl="free">المجانية</button>
+    <input class="search" id="q" type="search" placeholder="ابحث عن تجربة…">
+  </div>
+  <div id="cats"></div>
+
+  <div class="pro-box">
+    <div style="font-size:2.4rem">🔑</div>
+    <div style="flex:1;min-width:240px">
+      <h3>الحساب المميّز</h3>
+      <p>خمس تجارب مجانية متاحة للجميع. وللحصول على بقية التجارب، اشترك لتحصل على رمز تفعيل يعمل على جهاز واحد أو جهازين.</p>
+    </div>
+    <button class="btn warn" id="proBtn">طلب الاشتراك</button>
+  </div>
+</main>
+
+<footer>
+  مختبر عماد الافتراضي — إعداد البروفيسور عماد محمد فرحان، بمساعدة Claude.<br>
+  المحاكاة تمهيد للمختبر الحقيقي، ولا تغني عن إشراف المدرّس وقواعد السلامة.
+</footer>
+
+<div class="modal" id="proModal">
+  <div class="sheet" style="width:min(520px,100%)">
+    <header><h3>طلب الحساب المميّز</h3><button class="icon-btn" data-close>✕</button></header>
+    <div class="content" id="proContent"></div>
+  </div>
+</div>
+
+<script type="module" src="js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<title>مختبر عماد الافتراضي</title>
+<meta name="theme-color" content="#0b1620">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/tajawal-arabic-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="lab">
+<div class="progress"><i id="prog"></i></div>
+<div id="stage3d"></div>
+<div class="topbar">
+  <a class="icon-btn" href="index.html" title="قائمة التجارب">→</a>
+  <div class="title" id="expTitle">جارٍ التحميل…</div>
+  <span class="score-pill" id="score">⭐ 0</span>
+  <button class="icon-btn" id="btnPad" title="دفتر المختبر">📓</button>
+</div>
+
+<div class="modal" id="padModal">
+  <div class="sheet">
+    <header><h3>📓 دفتر المختبر</h3><button class="icon-btn" data-close>✕</button></header>
+    <div class="tabs" id="padTabs"></div>
+    <div class="content" id="padContent"></div>
+  </div>
+</div>
+<div class="modal" id="reportModal">
+  <div class="sheet">
+    <header><h3>📄 تقرير التجربة</h3><button class="icon-btn no-print" data-close>✕</button></header>
+    <div class="content" id="reportContent"></div>
+  </div>
+</div>
+<div class="modal" id="toolModal">
+  <div class="sheet" style="width:min(560px,100%)">
+    <header><h3 id="toolTitle"></h3></header>
+    <div class="content" id="toolContent"></div>
+  </div>
+</div>
+<noscript>يحتاج المختبر إلى تفعيل جافا سكربت.</noscript>
+<script type="module" src="js/lab.js"></script>
+</body>
+</html>
