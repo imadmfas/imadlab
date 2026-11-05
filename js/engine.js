@@ -73,13 +73,14 @@ export class Engine {
       this.act.appendChild(el);
     }
     this.body.scrollTop = 0;
+    if (this.as.closest('.scope') && innerWidth < 820) setTimeout(() => this.as.scrollIntoView({ block: 'nearest', behavior: 'smooth' }), 50);
   }
 
   show(st) {
     const theoryBtn = st.theory ? [{ t: '📖 النظرية', cls: 'ghost small', fn: () => this.openPad('theory', st.theory) }] : [];
     if (st.type === 'quiz') return this.showQuiz(st, theoryBtn);
     if (st.type === 'multi') return this.showMulti(st);
-    const text = (st.say || '') + (st.task ? `<div class="task">${st.task}</div>` : '');
+    const text = (st.say || '') + (st.task ? `<div class="task"><span>${st.task}</span></div>` : '');
     const btns = [];
     if (st.type === 'info') btns.push({ t: st.btn || 'التالي ←', fn: () => this.next(), grow: true });
     if (st.type === 'task' && st.hint) btns.push({ t: '💡 تلميح', cls: 'ghost small', fn: () => this.toast(st.hint, 'info', 6000) });

@@ -148,7 +148,7 @@ export class ScopeView {
 
   layout() {
     const mobile = innerWidth < 820;
-    const avail = mobile ? Math.min(innerWidth - 40, innerHeight * 0.42) : Math.min(innerHeight - 200, innerWidth - 420, 640);
+    const avail = mobile ? Math.min(innerWidth - 40, innerHeight * 0.38) : Math.min(innerHeight - 200, innerWidth - 420, 640);
     const d = Math.max(220, Math.floor(avail));
     this.ocular.style.width = this.ocular.style.height = d + 'px';
     const px = Math.round(d * 1.12 * Math.min(devicePixelRatio, 2));
