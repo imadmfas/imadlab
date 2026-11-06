@@ -5,7 +5,7 @@ export const SITE = {
   nameEn: 'ImadLab',
   author: 'إعداد البروفيسور عماد محمد فرحان',
   // ضع رقم واتساب بالصيغة الدولية دون + أو أصفار في البداية، مثل 9647XXXXXXXXX
-  whatsapp: '',
+  whatsapp: '9647812346562',
 };
 
 export const LEVELS = { school: 'الإعدادية', uni: 'الجامعة' };
